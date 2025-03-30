@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Farmer's Chatbot - Language Selection</title>
+</head>
+<body>
+    <h1>Select Language</h1>
+    
+    <form action="/set_language" method="post">
+        {% for language_name, language_code in languages.items() %}
+        <div>
+            <input type="radio" id="{{ language_code }}" name="language" value="{{ language_code }}">
+            <label for="{{ language_code }}">{{ language_name }}</label>
+        </div>
+        {% endfor %}
+        <button type="submit">Continue</button>
+    </form>
+</body>
+</html>
